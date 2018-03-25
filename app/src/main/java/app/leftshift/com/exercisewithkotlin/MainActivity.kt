@@ -20,6 +20,9 @@ class MainActivity : AppCompatActivity() {
 
         //TODO Here you will get Val is unassigned , means Val is immutable
 
+        //Use ‘val’ keyword to access the parameters of a constructor throughout the class but not modify it
+        //Use ‘var’ keyword to access the parameters of a constructor throughout the class and also modify it
+
         //letter = 'b'
         println("$letter")
 
@@ -32,6 +35,10 @@ class MainActivity : AppCompatActivity() {
         // TODO Var - Var is mutable
         var person = Person("my name is Vrushali",25)
         person = Person("my name is Vrushali",25,"Engineer")
+
+        person.changeJob("Product Engineer")
+
+        showToast(person.jobTitle,100,false)
     }
 
     private fun showToast(name: String, value: Int, isTrue : Boolean = false): Boolean {
