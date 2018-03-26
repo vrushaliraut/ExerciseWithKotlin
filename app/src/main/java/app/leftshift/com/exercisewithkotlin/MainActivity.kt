@@ -1,6 +1,5 @@
 package app.leftshift.com.exercisewithkotlin
 
-import android.icu.lang.UCharacter.GraphemeClusterBreak.V
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -30,8 +29,10 @@ class MainActivity : AppCompatActivity() {
         showToast("This is 2nd call",1,false)
 
         // TODO Var - Var is mutable
-        var person = Person("my name is Vrushali",25)
+        var person : TredingUnit = Person("my name is Vrushali",25)
         person = Person("my name is Vrushali",25,"Engineer")
+        person = Crypto("BT",1000)
+        println("Yesterday's Value "+ person.getYersterdaysValue())
     }
 
     private fun showToast(name: String, value: Int, isTrue : Boolean = false): Boolean {
