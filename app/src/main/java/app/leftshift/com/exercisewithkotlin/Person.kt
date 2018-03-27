@@ -7,6 +7,8 @@ import android.util.Log
  */
 class Person(name: String, age: Int) : TredingUnit {
 
+    var companyLogourl : String = "google.com/image"
+
     override fun getTheName(): String {
         return getTheName()
     }

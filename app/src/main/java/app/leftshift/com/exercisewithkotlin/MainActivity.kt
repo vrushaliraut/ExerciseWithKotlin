@@ -2,9 +2,14 @@ package app.leftshift.com.exercisewithkotlin
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
+import org.w3c.dom.Text
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : StockActivity(), View.OnClickListener {
+
 
     val addition : Int = 0
     var firstInteger : Int = 0
@@ -29,10 +34,49 @@ class MainActivity : AppCompatActivity() {
         showToast("This is 2nd call",1,false)
 
         // TODO Var - Var is mutable
-        var person : TredingUnit = Person("my name is Vrushali",25)
+
+        var person  = Person("my name is Vrushali",25)
+
+        person.companyLogourl
+
+
         person = Person("my name is Vrushali",25,"Engineer")
-        person = Crypto("BT",1000)
+
+
+        //person = Crypto("BT",1000)
+
         println("Yesterday's Value "+ person.getYersterdaysValue())
+
+
+        //TODO Null Safety and Smart Casts
+
+        var b : String? = "I can be null"
+        b?.length
+
+        findViewById<TextView>(R.id.textView).setText("Hello Welcome to the Kotlin")
+
+        fun onClick(v: View?) {
+
+            /*TODO : - !!
+            * 1. ? - This is used for checking null safety
+            * 2. !! - This is to check if it's not null, do something else go ahead and throw exception
+            *        asserts that an expression is non-null
+            * 3. ?: - Elvis Operator
+            *       -  takes the right-hand value if the left-hand value is null
+            * */
+
+            when(v){
+                is TextView -> v.text = "this is text"
+                is ImageView -> v.setImageResource(R.drawable.abc_ic_star_black_16dp)
+            }
+
+            /*
+                Typecast : - don't use instanceOf use is
+             */
+
+        }
+
+
     }
 
     private fun showToast(name: String, value: Int, isTrue : Boolean = false): Boolean {
