@@ -7,7 +7,7 @@
     tools:context="app.leftshift.com.exercisewithkotlin.MainActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txt_kotlin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello Kotlin World!"

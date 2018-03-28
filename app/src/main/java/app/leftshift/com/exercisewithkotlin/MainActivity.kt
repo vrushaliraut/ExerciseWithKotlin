@@ -10,13 +10,13 @@ import org.w3c.dom.Text
 
 class MainActivity : StockActivity(), View.OnClickListener {
 
-
     val addition : Int = 0
     var firstInteger : Int = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        findViewById<TextView>(R.id.txt_kotlin).setText("Hello Welcome to the Kotlin")
         firstInteger = 122
 
 
@@ -53,29 +53,10 @@ class MainActivity : StockActivity(), View.OnClickListener {
         var b : String? = "I can be null"
         b?.length
 
-        findViewById<TextView>(R.id.textView).setText("Hello Welcome to the Kotlin")
 
-        fun onClick(v: View?) {
+        //as GeneratorSingletone is a singletones you can not create the instance of this class.
 
-            /*TODO : - !!
-            * 1. ? - This is used for checking null safety
-            * 2. !! - This is to check if it's not null, do something else go ahead and throw exception
-            *        asserts that an expression is non-null
-            * 3. ?: - Elvis Operator
-            *       -  takes the right-hand value if the left-hand value is null
-            * */
-
-            when(v){
-                is TextView -> v.text = "this is text"
-                is ImageView -> v.setImageResource(R.drawable.abc_ic_star_black_16dp)
-            }
-
-            /*
-                Typecast : - don't use instanceOf use is
-             */
-
-        }
-
+        val tredingUnit = GeneratorSingletone.generatorTredingUnit()
 
     }
 
@@ -83,6 +64,22 @@ class MainActivity : StockActivity(), View.OnClickListener {
 
         Toast.makeText(this,name,Toast.LENGTH_LONG).show()
         return true
+    }
+
+
+    override fun onClick(v: View?) {
+        /*TODO : - !!
+             * 1. ? - This is used for checking null safety
+             * 2. !! - This is to check if it's not null, do something else go ahead and throw exception
+             *        asserts that an expression is non-null
+             * 3. ?: - Elvis Operator
+             *       -  takes the right-hand value if the left-hand value is null
+             * */
+
+        when(v){
+            is TextView -> v.text = "this is text"
+            is ImageView -> v.setImageResource(R.drawable.abc_ic_star_black_16dp)
+        }
     }
 
 }
