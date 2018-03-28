@@ -4,12 +4,26 @@ package app.leftshift.com.exercisewithkotlin
 object GeneratorSingletone {
 
     fun generatorTredingUnit(): TredingUnit{
-        val randomNumber = Math.random()
+
+        //TODO If else
+        val randomNumber = if(Math.random() > 0.2) 1 else 2
+
 
         when(randomNumber){
             in 0..5 -> return  Crypto("name", 445)
             else -> return  Crypto("XRP", 1250)
         }
+
+    }
+
+    fun forLoop(){
+
+        val arrayOfInts = intArrayOf(1, 2, 3, 4, 5)
+
+        for ((index,int) in arrayOfInts.withIndex()){
+            //do something
+        }
+
     }
 
     //TODO  this is one way 2. Extension function
