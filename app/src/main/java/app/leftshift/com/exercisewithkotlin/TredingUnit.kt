@@ -12,4 +12,7 @@ interface TredingUnit{
     fun getYersterdaysValue() : Int{
         return getValue() * 2
     }
+
+
+    infix fun TredingUnit.isTredingSince(preval: Int) = getValue() > preval
 }

@@ -11,4 +11,19 @@ object GeneratorSingletone {
             else -> return  Crypto("XRP", 1250)
         }
     }
+
+    //TODO  this is one way 2. Extension function
+    /*fun isTredingUp(tredingUnit: TredingUnit): Boolean{
+        return  tredingUnit.getValue() > tredingUnit.getYersterdaysValue()
+    }*/
+
+
+    //TODO another way - 1. Single expression function
+
+    fun isTredingUp(tredingUnit: TredingUnit) =
+            tredingUnit.getValue() > tredingUnit.getYersterdaysValue()
+
+    //TODO infix notation
+
+
 }

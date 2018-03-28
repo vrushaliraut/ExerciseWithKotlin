@@ -1,12 +1,10 @@
 package app.leftshift.com.exercisewithkotlin
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import org.w3c.dom.Text
 
 class MainActivity : StockActivity(), View.OnClickListener {
 
@@ -57,6 +55,10 @@ class MainActivity : StockActivity(), View.OnClickListener {
         //as GeneratorSingletone is a singletones you can not create the instance of this class.
 
         val tredingUnit = GeneratorSingletone.generatorTredingUnit()
+
+
+        //TODO infix function use
+        val isTrending = tredingUnit isTredingSince tredingUnit.getYersterdaysValue()
 
     }
 
