@@ -23,7 +23,14 @@ object GeneratorSingletone {
     fun isTredingUp(tredingUnit: TredingUnit) =
             tredingUnit.getValue() > tredingUnit.getYersterdaysValue()
 
-    //TODO infix notation
+
+    fun isTredingNamedArgument(tredingUnit: TredingUnit,
+                               comparator: Comparator<TredingUnit>? = null,
+                               forceTredingUp : Boolean = false ,
+                               minValue: Int = -100,
+                               maxValue: Int = 334) =
+            tredingUnit.getValue() > tredingUnit.getYersterdaysValue()
+
 
 
 }

@@ -60,6 +60,13 @@ class MainActivity : StockActivity(), View.OnClickListener {
         //TODO infix function use
         val isTrending = tredingUnit isTredingSince tredingUnit.getYersterdaysValue()
 
+
+        //Named Argument Example
+        val isTreding = GeneratorSingletone.isTredingNamedArgument(tredingUnit = tredingUnit, minValue =  23)
+
+        //We can switch the sequence
+        val isTreding1 = GeneratorSingletone.isTredingNamedArgument( minValue =  23 , tredingUnit = tredingUnit)
+
     }
 
     private fun showToast(name: String, value: Int, isTrue : Boolean = false): Boolean {
@@ -83,5 +90,5 @@ class MainActivity : StockActivity(), View.OnClickListener {
             is ImageView -> v.setImageResource(R.drawable.abc_ic_star_black_16dp)
         }
     }
-
+    infix fun TredingUnit.isTredingSince(preval: Int) = getValue() > preval
 }
